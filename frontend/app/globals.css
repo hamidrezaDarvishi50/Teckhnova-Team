@@ -1,0 +1,358 @@
+@import "tailwindcss";
+:root {
+    /* Brand Colors */
+    --color-primary: #0755D9;
+    --color-primary-hover: #0645B5;
+    --color-primary-light: #EAF2FF;
+
+    --color-navy: #061A40;
+    --color-electric: #3295FF;
+
+    /* Background Colors */
+    --color-background: #F3F7FD;
+    --color-surface: #FFFFFF;
+    --color-surface-muted: #F8FAFC;
+
+    /* Text Colors */
+    --color-text: #172033;
+    --color-text-secondary: #64748B;
+    --color-text-muted: #94A3B8;
+    --color-text-inverse: #FFFFFF;
+
+    /* Border Colors */
+    --color-border: #E2E8F0;
+    --color-border-focus: #0755D9;
+
+    /* Status Colors */
+    --color-success: #16A34A;
+    --color-success-light: #DCFCE7;
+
+    --color-danger: #E5394F;
+    --color-danger-light: #FEF2F2;
+
+    --color-warning: #F59E0B;
+    --color-warning-light: #FEF3C7;
+
+    /* Typography */
+    --font-main: Arial, Helvetica, sans-serif;
+
+    /* Border Radius */
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --radius-full: 9999px;
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px rgb(6 26 64 / 5%);
+    --shadow-md: 0 8px 24px rgb(6 26 64 / 8%);
+    --shadow-lg: 0 16px 40px rgb(6 26 64 / 12%);
+
+    /* MainLayout */
+    --container-width: 1280px;
+    --page-padding: 24px;
+
+    /* Transitions */
+    --transition-fast: 150ms ease;
+    --transition-normal: 250ms ease;
+}
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-family: var(--font-main);
+    font-size: 14px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img,
+video {
+    display: block;
+    max-width: 100%;
+}
+
+img {
+    height: auto;
+}
+
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin-top: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1.2;
+}
+
+
+.container {
+    width: min(
+            100% - (var(--page-padding) * 2),
+            var(--container-width)
+    );
+    margin-inline: auto;
+}
+
+.section {
+    padding-block: 48px;
+}
+
+.section-title {
+    margin-bottom: 8px;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.section-description {
+    margin-bottom: 24px;
+    color: var(--color-text-secondary);
+}
+
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 42px;
+    padding: 10px 20px;
+    border: 1px solid transparent;
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    text-align: center;
+    transition:
+            background-color var(--transition-fast),
+            color var(--transition-fast),
+            border-color var(--transition-fast),
+            transform var(--transition-fast);
+}
+
+.btn-primary {
+    background: var(--color-primary);
+    color: var(--color-text-inverse);
+}
+
+.btn-primary:hover {
+    background: var(--color-primary-hover);
+}
+
+.btn-secondary {
+    border-color: var(--color-border);
+    background: var(--color-surface);
+    color: var(--color-text);
+}
+
+.btn-secondary:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+.btn-dark {
+    background: var(--color-navy);
+    color: var(--color-text-inverse);
+}
+
+.btn-dark:hover {
+    background: #0B2B60;
+}
+
+
+.product-card {
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: var(--color-surface);
+    transition:
+            box-shadow var(--transition-normal),
+            transform var(--transition-normal),
+            border-color var(--transition-normal);
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+    border-color: #C9D9F5;
+    box-shadow: var(--shadow-md);
+}
+
+.product-card-image {
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    background: var(--color-surface-muted);
+    aspect-ratio: 1 / 1;
+}
+
+.product-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.product-card-content {
+    padding: 16px;
+}
+
+.product-title {
+    margin-bottom: 8px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.product-price {
+    color: var(--color-primary);
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.product-old-price {
+    color: var(--color-text-muted);
+    font-size: 12px;
+    text-decoration: line-through;
+}
+
+/* ========================================
+   Forms
+   ======================================== */
+
+.input {
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 14px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    outline: none;
+    background: var(--color-surface);
+    color: var(--color-text);
+    transition:
+            border-color var(--transition-fast),
+            box-shadow var(--transition-fast);
+}
+
+.input::placeholder {
+    color: var(--color-text-muted);
+}
+
+.input:focus {
+    border-color: var(--color-border-focus);
+    box-shadow: 0 0 0 3px rgb(7 85 217 / 12%);
+}
+
+/* ========================================
+   Badges
+   ======================================== */
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 10px;
+    border-radius: var(--radius-full);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.badge-sale {
+    background: var(--color-danger-light);
+    color: var(--color-danger);
+}
+
+.badge-success {
+    background: var(--color-success-light);
+    color: var(--color-success);
+}
+
+/* ========================================
+   Accessibility
+   ======================================== */
+
+:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+}
+
+::selection {
+    background: var(--color-primary-light);
+    color: var(--color-navy);
+}
+
+/* ========================================
+   Responsive
+   ======================================== */
+
+@media (max-width: 768px) {
+    :root {
+        --page-padding: 16px;
+    }
+
+    .section {
+        padding-block: 32px;
+    }
+
+    .section-title {
+        font-size: 21px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
