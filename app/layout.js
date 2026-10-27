@@ -1,8 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Layout/Header";
-import Footer from "@/components/Layout/Footer";
 import localFont from "next/font/local";
+import {AuthProvider} from "@/context/AuthContext";
 
 
 const vazirmatn = localFont({
@@ -36,9 +35,7 @@ export default function RootLayout({ children }) {
       <html lang="fa" dir="rtl">
 
       <body className={vazirmatn.className}>
-      <Header />
-      {children}
-      <Footer />
+      <AuthProvider>{children}</AuthProvider>
       </body>
     </html>
   );
