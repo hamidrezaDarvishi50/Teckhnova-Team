@@ -9,7 +9,7 @@ export default function Hero() {
                 backgroundImage: "url('/home/hero/hero.png')",
             }}
         >
-            <div className="lg:absolute  lg:top-46 lg:right-25">
+            <div className="absolute top-40 right-10 lg:absolute  lg:top-46 lg:right-25">
                 <h1 className="text-4xl font-black leading-[1.6] tracking-tight text-white sm:text-5xl lg:text-7xl">
                     فناوری،
                     <br/>

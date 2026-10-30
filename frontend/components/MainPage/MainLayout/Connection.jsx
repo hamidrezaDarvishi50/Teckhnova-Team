@@ -21,7 +21,7 @@ export default function Connection(){
                  style={{
                      backgroundImage: "url('/connection/connection.png')",
                  }} dir={"ltr"} >
-                <div className="max-w-[35%] mt-20 ml-30">
+                <div className="w-[95%] md:w-[70%] lg:max-w-[35%] ml-5 mt-10 lg:mt-20 lg:ml-30">
                     <h2 className="text-3xl text-white " dir={"rtl"}>با ما در اتباط باشید!</h2>
                     <p className="text-lg text-white " dir={"rtl"}>با وارد کردن ایمیل خود از اخرین تخفیف ها و محصلات با خبر شوید.  </p>
                     <form

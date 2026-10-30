@@ -9,8 +9,8 @@ export default function Hero() {
                 backgroundImage: "url('/shopping/shopping.png')",
             }}
         >
-            <div className="lg:absolute  lg:top-46 lg:left-45">
-                    <span className="bg-gradient-to-l text-7xl font-black from-white via-[#BBDFFF] to-[#3295FF] bg-clip-text text-transparent">
+            <div className="absolute top-35 right-28 lg:top-46 lg:right-45">
+                    <span className="bg-gradient-to-l text-4xl lg:text-7xl font-black from-white via-[#BBDFFF] to-[#3295FF] bg-clip-text text-transparent">
                       محصولات ما
                     </span>
                 <p className="text-gray-400 text-[18px] mt-4 mb-4">آینده رو همین امروز لمس کن؛ جدیدترین تکنولوژی، یک قدم نزدیک‌تر به تو!</p>

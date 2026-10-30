@@ -61,14 +61,6 @@ export default function Header() {
 
   const iconClass =
       "flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] text-white transition-all duration-300 hover:border-white/30 hover:bg-white/10";
-
-
-  // console.log("Header render:", {
-  //   isScrolled,
-  //   menuOpen,
-  //   searchOpen,
-  //   navItems,
-  // });
   return (
       <div dir="rtl" className="relative z-50">
         <header
@@ -123,7 +115,7 @@ export default function Header() {
               >
                 {menuOpen ? <FiX size={19} /> : <FiMenu size={19} />}
               </button>
-              <h1 className="bg-gradient-to-l from-white via-[#BBDFFF] to-[#3295FF] bg-clip-text text-transparent text-3xl font-black mr-15 ">TechNova</h1>
+              <h1 className="bg-gradient-to-l from-white via-[#BBDFFF] to-[#3295FF] bg-clip-text text-transparent text-xl lg:text-3xl sm:text-2xl font-black lg:mr-15 ">TechNova</h1>
             </div>
 
 
@@ -157,14 +149,6 @@ export default function Header() {
                 </button>
               </div>
 
-              <button
-                  type="button"
-                  onClick={() => setFavoriteOpen(true)}
-                  aria-label="علاقه‌مندی‌ها"
-                  className={`${iconClass}border-white/30 bg-white/10 text-[var(--color-text)] hover:border-[var(--color-electric)]/60 hover:text-[var(--color-primary)]`}
-              >
-                <FiHeart className="text-xl" />
-              </button>
 
               <Link
                   href="/cart"
@@ -232,14 +216,7 @@ export default function Header() {
                 }}
             />
         )}
-        {favoriteOpen && (
-            <FavoriteLoginModal
-                onClose={() => setFavoriteOpen(false)}
-                onSuccess={() => {
-                  setFavoriteOpen(false);
-                }}
-            />
-        )}
+
       </div>
   );
 }
